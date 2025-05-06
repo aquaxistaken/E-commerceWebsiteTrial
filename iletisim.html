@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>İletişim - Elif'in Eliyle</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <a style="text-decoration: none; color: rgb(111, 228, 128);" href="index.html"><h1>Elif'in Eliyle</h1></a>
+        <p>Antalya'dan El Yapımı Doğal Ürünler Butiği</p>
+        <nav aria-label="Ana Menü">
+            <a href="index.html">Anasayfa</a>
+            <a href="urunler.html">Ürünlerimiz</a>
+            <a href="iletisim.html" class="active" aria-current="page">İletişim</a>
+            <a href="hakkimizda.html">Hakkımızda</a>
+            <a href="sepet.html">Sepet <span id="sepet-adet">0</span></a>
+        </nav>
+    </header>
+
+    <main>
+        <h2>Bize Ulaşın</h2>
+        <p>Sorularınız, önerileriniz veya siparişleriniz için aşağıdaki formu doldurabilirsiniz.</p>
+        <form id="iletisimFormu" aria-label="İletişim Formu">
+            <div class="form-grup">
+                <label for="ad">Adınız Soyadınız:</label>
+                <input type="text" id="ad" name="ad" required>
+            </div>
+            <div class="form-grup">
+                <label for="email">E-posta Adresiniz:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-grup">
+                <label for="mesaj">Mesajınız:</label>
+                <textarea id="mesaj" name="mesaj" rows="5" required></textarea>
+            </div>
+            <button class="gonder-butonu" type="button" onclick="gonderEmail()">Gönder</button>
+        </form>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Elif'in Eliyle. Antalya'dan sevgiyle tasarlandı.</p>
+    </footer>
+
+    <script>
+        function gonderEmail() {
+            const ad = document.getElementById('ad').value;
+            const email = document.getElementById('email').value;
+            const mesaj = document.getElementById('mesaj').value;
+
+            const konu = "Web Sitesi İletişim Formu";
+            const body = `Ad Soyad: ${ad}\nE-posta: ${email}\n\nMesaj:\n${mesaj}`;
+
+            window.location.href = `mailto:bozkurtarda59@gmail.com?subject=${encodeURIComponent(konu)}&body=${encodeURIComponent(body)}`;
+        }
+    </script>
+</body>
+</html>

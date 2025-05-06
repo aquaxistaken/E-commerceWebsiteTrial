@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sepetiniz - Elif'in Eliyle</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <a style="text-decoration: none; color: rgb(111, 228, 128);" href="index.html"><h1>Elif'in Eliyle</h1></a>
+        <p>Antalya'dan El Yapımı Doğal Ürünler Butiği</p>
+        <nav aria-label="Ana Menü">
+            <a href="index.html">Anasayfa</a>
+            <a href="urunler.html">Ürünlerimiz</a>
+            <a href="iletisim.html">İletişim</a>
+            <a href="hakkimizda.html">Hakkımızda</a>
+            <a href="sepet.html" class="active" aria-current="page">Sepet <span id="sepet-adet">0</span></a>
+        </nav>
+    </header>
+
+    <main>
+        <h2>Sepetiniz</h2>
+        <div id="sepet-urunleri">
+            <p id="sepet-bos-mesaji">Sepetinizde henüz ürün bulunmamaktadır.</p>
+        </div>
+        <div id="sepet-toplam">
+            <strong>Toplam:</strong> <span>0 TL</span>
+        </div>
+        <button id="odeme-butonu">Ödemeye Git</button>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Elif'in Eliyle. Antalya'dan sevgiyle tasarlandı.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ödeme</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<header>
+    <a style="text-decoration: none; color: rgb(111, 228, 128);" href="index.html"><h1>Elif'in Eliyle</h1></a>
+    <p>Antalya'dan El Yapımı Doğal Ürünler Butiği</p>
+    <nav aria-label="Ana Menü">
+        <a href="index.html">Anasayfa</a>
+        <a href="urunler.html">Ürünlerimiz</a>
+        <a href="iletisim.html">İletişim</a>
+        <a href="hakkimizda.html">Hakkımızda</a>
+        <a href="sepet.html">Sepet <span id="sepet-adet">0</span></a>
+    </nav>
+    <div class="sayfa-basligi">
+        <h2>Ödeme İşlemleri</h2>
+        <p>Siparişinizi tamamlamak için lütfen aşağıdaki bilgileri doldurun.</p>
+    </div>
+</header>
+<body>
+    <form id="odemeFormu">
+        <h3>Fatura Bilgileri</h3>
+        <div class="form-grup">
+            <label for="faturaAd">Ad Soyad:</label>
+            <input type="text" id="faturaAd" name="faturaAd" required>
+        </div>
+        <div class="form-grup">
+            <label for="faturaAdres">Adres:</label>
+            <textarea id="faturaAdres" name="faturaAdres" rows="3" required></textarea>
+        </div>
+        <div class="form-grup">
+            <label for="faturaEmail">E-posta:</label>
+            <input type="email" id="faturaEmail" name="faturaEmail" required>
+        </div>
+    
+        <h3>Ödeme Yöntemi</h3>
+        <div class="form-grup">
+            <label for="odemeYontemi">Ödeme Yöntemi Seçin:</label>
+            <select id="odemeYontemi" name="odemeYontemi">
+                <option value="krediKarti">Kredi Kartı</option>
+                <option value="havale">Banka Havalesi/EFT</option>
+                <option value="kapidaOdeme">Kapıda Ödeme</option>
+            </select>
+        </div>
+    
+        <div id="krediKartiBilgileri" class="odeme-detaylari">
+            <h4>Kredi Kartı Bilgileri</h4>
+            <div class="form-grup">
+                <label for="kartNumarasi">Kart Numarası:</label>
+                <input type="text" id="kartNumarasi" name="kartNumarasi" pattern="[0-9]{16}" placeholder="xxxx-xxxx-xxxx-xxxx" required>
+            </div>
+            <div class="form-grup">
+                <label for="sonKullanma">Son Kullanma Tarihi:</label>
+                <input type="month" id="sonKullanma" name="sonKullanma" required>
+            </div>
+            <div class="form-grup">
+                <label for="cvv">CVV:</label>
+                <input type="text" id="cvv" name="cvv" pattern="[0-9]{3}" required>
+            </div>
+        </div>
+    
+        <div id="havaleBilgileri" class="odeme-detaylari" style="display:none;">
+            <h4>Banka Havalesi/EFT Bilgileri</h4>
+            <p>Banka hesap numaramız ve diğer bilgiler burada yer alacaktır.</p>
+        </div>
+    
+        <div id="kapidaOdemeBilgileri" class="odeme-detaylari" style="display:none;">
+            <h4>Kapıda Ödeme</h4>
+            <p>Ödemenizi ürün teslimatında nakit olarak yapabilirsiniz.</p>
+        </div>
+    
+        <h3>Sipariş Özeti</h3>
+        <div id="siparisOzeti">
+            </div>
+        <div id="toplamTutar">
+            </div>
+    
+        <button type="submit" class="odeme-butonu">Ödemeyi Tamamla</button>
+    </form>
+</body>
+</html>
